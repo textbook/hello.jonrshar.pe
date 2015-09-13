@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jonrshar.pe</title>
+
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="bower_components/polymer/polymer.html">
+
+  <link rel="import" href="bower_components/google-map/google-map.html">
+  <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+  <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="bower_components/paper-styles/paper-styles.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+
+  <link rel="import" href="js-link-menu.html">
+
+  <link rel="stylesheet" href="css/index.css">
+
+  <style></style>
+
+</head>
+<body unresolved>
+  <paper-drawer-panel id="menuDrawerPanel" transition="true" force-narrow>
+    <div drawer>
+      <paper-menu selected="0" id="site-menu" role="menu">
+        <paper-item paper-drawer-toggle role="menuitem" id="about-menu">
+          <iron-icon icon="account-box" class="menu-icon"></iron-icon>
+          <paper-item-body>
+            <div>About</div>
+          </paper-item-body>
+        </paper-item>
+        <paper-item paper-drawer-toggle role="menuitem" id="link-menu">
+          <iron-icon icon="link" class="menu-icon"></iron-icon>
+          <paper-item-body>
+            <div>Links</div>
+          </paper-item-body>
+        </paper-item>
+        <paper-item paper-drawer-toggle role="menuitem" id="contact-menu">
+          <iron-icon icon="drafts" class="menu-icon"></iron-icon>
+          <paper-item-body>
+            <div>Contact</div>
+          </paper-item-body>
+        </paper-item>
+        <footer style="position: absolute; bottom: 0; margin: 15px;">
+          <p>&copy; 2015 Jonathan Sharpe</p>
+          <p>Created with <a href="https://www.polymer-project.org">Polymer</a></p>
+          <p>Hosted on <a href="https://divshot.com/">Divshot</a></p>
+        </footer>
+      </paper-menu>
+    </div>
+
+    <div main>
+      <paper-header-panel mode="waterfall">
+        <paper-toolbar bottom-justify="end" id="site-header">
+          <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+          <h1>jonrshar.pe</h1>
+          <paper-tabs selected="0" class="bottom self-end" noink>
+            <paper-tab>Who are you?</paper-tab>
+            <paper-tab>Where are you?</paper-tab>
+            <paper-tab>What do you do?</paper-tab>
+          </paper-tabs>
+        </paper-toolbar>
+
+        <iron-pages selected="0" class="body" id="site-pages">
+          <div>
+            <iron-pages selected="0" id="about-pages">
+              <div>
+                <h2>Jonathan Sharpe</h2>
+                <img src="images/avatar.jpg" class="avatar" alt="The site's author and a puppy" />
+                <p class="intro">This is me.</p>
+                <p>Sadly, though, that is not my puppy; my brother took the photo
+                on a trip to the <a href="http://villmarkssenter.no/">Tromsø
+                Wilderness Centre</a>.</p>
+                <p>I am a (reasonably) professional transport consultant and
+                software developer and a (very) amateur guitarist and
+                photographer.</p>
+              </div>
+
+              <div>
+                <h2>Bracknell</h2>
+                <p>For the last few years I've been living in Bracknell, UK:</p>
+                <div class="map-container">
+                  <google-map fit-to-markers>
+                    <google-map-marker latitude="51.390" longitude="-0.750" title="somewhere around here..."></google-map-marker>
+                  </google-map>
+                </div>
+              </div>
+
+              <div>
+                <h2>Senior Researcher</h2>
+                <p class="intro"><a href="http://www.trl.co.uk">Transport Research
+                Laboratory</a></p>
+                <p>My primary responsibilities are as a research lead, working
+                autonomously to deliver innovative projects, and as a developer
+                of software tools for decision support and asset modelling. I also
+                manage teams to deliver more complex projects and, as an associate
+                fellow of the TRL Academy, I contribute to the development and
+                delivery of TRL’s scientific goals, including leading a project on
+                “big data”. Significant projects have included a technology
+                horizons scan for the Department for Transport, which produced a
+                published report and presentations to the TRL Academy and the
+                DfT's Chief Scientific Advisor's technical seminar; leading a team
+                to design and deliver a multi-tier .NET web application for
+                Highways England; taking a leading role in the development of a
+                complex financial model for the DfT, which is currently undergoing
+                external assurance; and the development of a probabilistic whole-
+                life costing technique for Shell.</p>
+
+                <p>My research skills include: development of new data processing
+                techniques and value management methodologies; and analysis of both
+                the broad technological issues surrounding transportation generally
+                and management of its infrastructure assets specifically. Recent
+                involvement in EU research projects (SmartRAIL, Capacity4Rail
+                and DestinationRail) has given me greater experience of working
+                with large, international, interdisciplinary teams.</p>
+
+                <p>In terms of software development Python is my go-to language,
+                but I have experience with the .NET stack (largely VB, including
+                WPF for desktop apps and ASP Web Forms with SQL Server for web
+                applications) and Excel/VBA, too. My experience covers the whole
+                software lifecycle, from initial requirements capture, through
+                design and development to testing, deployment and support, and
+                I’ve been involved in the validation of commercial software, from
+                technical and business requirement standpoints.</p>
+              </div>
+            </iron-pages>
+          </div>
+
+          <div>
+            <h2>Links</h2>
+            <js-link-menu></js-link-menu>
+          </div>
+
+          <div>
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, the easiest way is to send me an
+            email; my address is mail (at) jonrshar (dot) pe.</p>
+          </div>
+        </iron-pages>
+
+      </paper-header-panel>
+    </div>
+  </paper-drawer-panel>
+  <script>
+    var aboutPages = document.querySelector('#about-pages');
+    var aboutTabs = document.querySelector('paper-tabs');
+    var siteMenu = document.querySelector('#site-menu');
+    var sitePages = document.querySelector('#site-pages');
+    var siteHeader = document.querySelector('#site-header');
+
+    aboutTabs.addEventListener('iron-select', function(){
+      //aboutPages.selected = aboutTabs.selected;
+      // I had to implement this manually for Firefox and Safari...
+      var selected = aboutTabs.selected;
+      var divs = aboutPages.children;
+      for (i=0; i<divs.length; i++) {
+        if (i == selected) {
+          divs[i].className = 'iron-selected';
+        } else {
+          divs[i].className = '';
+        }
+      }
+      aboutPages.children = aboutTabs.selected;
+    });
+
+    siteMenu.addEventListener('iron-select', function(){
+      if (siteMenu.selected != 0) {
+        aboutTabs.hidden = true;
+        if (siteMenu.selected == 1) {
+          siteHeader.style.backgroundColor = "#0f9d58";
+        } else {
+          siteHeader.style.backgroundColor = "#4285f4";
+        };
+      } else {
+        aboutTabs.hidden = false;
+        siteHeader.style.backgroundColor = "#db4437";
+      };
+      sitePages.selected = siteMenu.selected;
+    })
+  </script>
+</body>
+</html>
