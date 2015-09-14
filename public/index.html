@@ -24,9 +24,6 @@
   <link rel="import" href="js-link-menu.html">
 
   <link rel="stylesheet" href="css/index.css">
-
-  <style></style>
-
 </head>
 <body unresolved>
   <paper-drawer-panel id="menuDrawerPanel" transition="true" force-narrow>
@@ -63,7 +60,7 @@
         <paper-toolbar bottom-justify="end" id="site-header">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <h1>jonrshar.pe</h1>
-          <paper-tabs selected="0" class="bottom self-end" noink>
+          <paper-tabs class="bottom self-end" noink>
             <paper-tab>Who are you?</paper-tab>
             <paper-tab>Where are you?</paper-tab>
             <paper-tab>What do you do?</paper-tab>
@@ -72,7 +69,7 @@
 
         <iron-pages selected="0" class="body" id="site-pages">
           <div>
-            <iron-pages selected="0" id="about-pages">
+            <iron-pages id="about-pages">
               <div>
                 <h2>Jonathan Sharpe</h2>
                 <img src="images/avatar.jpg" class="avatar" alt="The site's author and a puppy" />
@@ -157,19 +154,12 @@
     var sitePages = document.querySelector('#site-pages');
     var siteHeader = document.querySelector('#site-header');
 
+    document.addEventListener('WebComponentsReady', function () {
+      aboutTabs.selected = aboutPages.selected = 0;
+    });
+
     aboutTabs.addEventListener('iron-select', function(){
-      //aboutPages.selected = aboutTabs.selected;
-      // I had to implement this manually for Firefox and Safari...
-      var selected = aboutTabs.selected;
-      var divs = aboutPages.children;
-      for (i=0; i<divs.length; i++) {
-        if (i == selected) {
-          divs[i].className = 'iron-selected';
-        } else {
-          divs[i].className = '';
-        }
-      }
-      aboutPages.children = aboutTabs.selected;
+      aboutPages.selected = aboutTabs.selected;
     });
 
     siteMenu.addEventListener('iron-select', function(){
