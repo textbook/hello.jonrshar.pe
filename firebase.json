@@ -1,0 +1,9 @@
+{
+  "firebase": "hello-textbook",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
