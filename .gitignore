@@ -1,3 +1,6 @@
-.divshot-cache
+// JetBrains
+.idea
 
-firebase-debug.log
+// Generated CSS
+*.css
+*.css.map

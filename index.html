@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>jonrshar.pe</title>
+  <link rel="stylesheet" href="styles.min.css">
+  <script src="https://use.fonticons.com/98450aa4.js"></script>
+</head>
+<body>
+  <header>
+    <h1>jonrshar.pe</h1>
+  </header>
+  <article>
+    <img id="avatar" src="https://www.dropbox.com/s/imlegflmq4sxbjc/avatar.jpg?raw=1">
+
+    <p>Hi! I'm Jonathan Sharpe. I'm a professional software engineer and an amateur guitarist and
+      photographer. If you'd like to get in touch, you can email me
+      <a id="email-link"
+         href="mailto:user@example.com?subject=Please%20enable%20JavaScript%20to%20send%20email&body=See%20subject%20line,%20or%20use%20'mail@'%20this%20site's%20domain">
+        here</a>.</p>
+    <p id="avatarDescription">That's me to the right but, sadly, that isn't my puppy; it belongs to
+      the <a href="http://www.villmarkssenter.no/">Tromsø Villmarkssenter.</a></p>
+
+    <h2>What do you do?</h2>
+    <p>I'm a Senior Software Engineer for <a href="https://pivotal.io/labs">Pivotal Labs</a>,
+      usually based in London, UK. Pivotal aims to transform how the world builds software,
+      bringing agile development techniques to start-ups and established companies.</p>
+    <p>In general, that means that I spend most of my time working with our clients' engineering
+      teams, helping them to adopt Extreme Programming practices like test-driven development,
+      continuous delivery and pair programming. I also work closely with the product and design
+      parts of our small, balanced teams, helping to keep the focus on delivering value to the end
+      users of the products we are developing.</p>
+
+    <h2>Where are you?</h2>
+    <p>Usually I work in London, but right now I'm on an engagement in Dublin, Ireland. Pivotal's
+      office here can be found at <a href="http://dogpatchlabs.com/">Dogpatch Labs</a>, in the CHQ
+      Building.</p>
+    <p>Here are a few of the places I've been working recently:</p>
+    <img id="location-map" alt="Map showing Munich, Dublin and London"
+         src="https://maps.googleapis.com/maps/api/staticmap?markers=chq+building,dublin%7Cthe+bower,london%7Callianz+gi,munich&size=640x320&scale=2&key=AIzaSyC9apEgzh2zNCO5gs5mVLlmrx6bFG1fLEE"
+    />
+
+  </article>
+
+  <section class="links">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://500px.com/jonrsharpe"><i class="fa fa-500px"></i>500px</a></li>
+      <li><a href="https://twitter.com/jonrsharpe"><i class="fa fa-twitter"></i>Twitter</a></li>
+      <li><a href="http://stackoverflow.com/users/3001761/jonrsharpe">
+        <i class="fa fa-stack-overflow"></i>Stack Overflow
+      </a></li>
+      <li><a href="https://github.com/textbook"><i class="fa fa-github"></i>GitHub</a></li>
+      <li><a href="http://blog.jonrshar.pe"><i class="fa fa-book"></i>Blog</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2016, Jonathan Sharpe |
+    <i class="fa fa-html5"></i>HTML 5 and <i class="fa fa-css3"></i>CSS 3
+  </footer>
+
+  <script type="text/javascript">
+    // If JavaScript is enabled
+
+    // Add right margin to Fort Awesome icons
+    function addFontAwesomeRightMargin(selector, margin) {
+      Array.prototype.slice.call(document.querySelectorAll(selector)).forEach(function(element) {
+        element.style.marginRight = margin;
+      });
+    }
+    addFontAwesomeRightMargin('section.links i.fa', '0.5em');
+    addFontAwesomeRightMargin('footer i.fa', '0.2em');
+
+    // Inject email address
+    function decode(encoded) {
+      var decoded = '';
+      for (var i = 0; i < encoded.length; i += 1) {
+        // Borrowed from @neilj
+        decoded += String.fromCharCode(7 ^ encoded.charCodeAt(i));
+      }
+      return decoded;
+    }
+    document.getElementById('email-link').href = 'mailto:' + decode('jfnkGmhiutofu)wb') + '?subject=Website%20contact';
+  </script>
+</body>
+</html>
