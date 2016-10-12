@@ -1,6 +1,5 @@
-// JetBrains
+# JetBrains
 .idea
 
-// Generated CSS
-*.css
-*.css.map
+# Generated CSS
+*.css*
